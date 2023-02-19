@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Tip calculator</title>
+</head>
+<body>
+
+  <div class="app">
+    <form>
+          <div class="container">
+            <div class="bill-wrapper">
+              <div class="bill-info">
+                <form class="bill-form">
+                  <div class="bill-form__number">
+                    <label for="number">Bill</label>
+                    <div class="input-wrapper">
+                      <input type="tel" name="number" id="number" placeholder="0" autocomplete="off" data-validate-field="number" maxlength="6">
+                    </div>
+                  </div>
+                  <div class="bill-form__tips tips">
+                    <label for="tip">Select Tip %</label>
+                    <div class="tips-percent-wrapper">
+                      <div class="tips__percent">
+                        <input id="tip" type="radio" name="radio" value="5">
+                        <div class="num">5%</div>
+                      </div>
+                      <div class="tips__percent">
+                        <input type="radio" name="radio" value="10">
+                        <div class="num">10%</div>
+                      </div>
+                      <div class="tips__percent">
+                        <input type="radio" name="radio" value="15">
+                        <div class="num">15%</div>
+                      </div>
+                      <div class="tips__percent">
+                        <input type="radio" name="radio" value="25">
+                        <div class="num">25%</div>
+                      </div>
+                      <div class="tips__percent">
+                        <input type="radio" name="radio" value="50">
+                        <div class="num">50%</div>
+                      </div>
+                      <div class="tips__input">
+                        <input type="tel" id="percent" name="percent" placeholder="Custom" autocomplete="off" maxlength="2">
+                        <!-- <div class="num">Custom</div> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bill-form__people">
+                    <label for="numberOfPeople">Number of People</label>
+                    <div class="input-wrapper">
+                      <input type="tel" name="numberOfPeople" id="numberOfPeople" placeholder="0" autocomplete="off" data-validate-field="radio" maxlength="2">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="amount-wrapper">
+              <div class="amount-info">
+                <div class="amount-info__tip tip-amount">
+                  <div class="tip-amount-wrapper">
+                    <h4 class="tip-amount__name">Tip Amount</h4>
+                    <p class="tip-amount__descr">/ person</p>
+                  </div>
+                  <div class="tip-amount-sum">
+                    <span>$0.00</span>
+                  </div>
+                </div>
+                <div class="amount-info__total total">
+                  <div class="total-wrapper">
+                    <h4 class="total__name">Total</h4>
+                    <p class="total__descr">/ person</p>
+                  </div>
+                  <div class="total-sum">
+                    <span>$0.00</span>
+                  </div>
+                </div>
+                <div class="btn-reset">
+                  <button type="submit">Reset</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </form>
+  </div>
+  
+  <script src="./assets/libs/just-validate.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
+

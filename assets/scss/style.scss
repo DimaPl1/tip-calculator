@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+    // Color Basic
+    $white: hsl(0, 0%, 100%);
+    // Color Primary:
+    $primaryStrongCyan: hsl(172, 67%, 45%);
+    // Colors Neutral
+    $veryDarkCyan: hsl(183, 100%, 15%);
+    $darkGrayishCyan: hsl(186, 14%, 43%);
+    $grayishCyan: hsl(184, 14%, 56%);
+    $lightGrayishCyan: hsl(185, 41%, 84%);
+    $veryLightGrayishCyan: hsl(180, 57%, 88%);
+    // Form inputs size
+    $inputSize: 24px;
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+label {
+  display: block;
+}
+
+body {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Space Mono', monospace;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: $lightGrayishCyan;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 1024px;
+  background-color: $white;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.bill-wrapper {
+  width: 50%;
+}
+
+.bill-form {
+		&__number {
+      label {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: $grayishCyan;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid $veryLightGrayishCyan;
+        border-radius: 5px;
+        font-size: 20px;
+        text-align: right;
+        color: $veryDarkCyan;
+        font-weight: 700;
+        background-color: $veryLightGrayishCyan;
+        cursor: pointer;
+        caret-color: $primaryStrongCyan;
+        background-image: url('../../images/icon-dollar.svg');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        &:focus {
+          outline: none;
+          border: 2px solid $primaryStrongCyan;
+        }
+        &:active {
+          outline: none;
+          border: 2px solid $primaryStrongCyan;
+        }
+        &::placeholder {
+          text-align: right;
+          color: $grayishCyan;
+        }
+      }
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        & > .js-validate-error-label{
+          position: absolute;
+          bottom: 45px;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+		}
+
+		&__tips {
+      margin: 40px 0;
+      label {
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 700;
+        color: $grayishCyan;
+      }
+      .tips-percent-wrapper {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        .tips__percent {
+          position: relative;
+          height: 40px;
+          width: 120px;
+          & > input {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+            opacity: 0;
+            cursor: pointer;
+          }
+          & > .num {
+            display: flex;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 700;
+            color: $white;
+            background-color: $veryDarkCyan;
+          }
+          input[type="radio"]:checked + .num {
+            color: $veryDarkCyan;
+            background-color: hsl(172deg, 67%, 45%);
+          }
+        }
+        .tips__input {
+          input {
+            width: 120px;
+            padding: 7px;
+            border: 2px solid $veryLightGrayishCyan;
+            border-radius: 5px;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: right;
+            color: $veryDarkCyan;
+            caret-color: $primaryStrongCyan;
+            background-color: $veryLightGrayishCyan;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            &::placeholder {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              font-size: 20px;
+              letter-spacing: 1px;
+              color: $darkGrayishCyan;
+            }
+            &:focus {
+              outline: none;
+              border-color: $primaryStrongCyan;
+            }
+            &:hover {
+              background-color: hsl(180, 38%, 82%);;
+            }
+          }
+        }
+      }
+		}
+		&__people {
+      label {
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: hsl(184deg, 14%, 56%);
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid hsl(189deg, 41%, 97%);
+        border-radius: 5px;
+        font-size: 20px;
+        text-align: right;
+        color: hsl(183deg, 100%, 15%);
+        caret-color: $primaryStrongCyan;
+        font-weight: 700;
+        background-color: $veryLightGrayishCyan;
+        background-image: url('../../images/icon-person.svg');
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        cursor: pointer;
+        &::placeholder {
+          text-align: right;
+          color: $grayishCyan;
+        }
+        &:focus {
+          outline: none;
+          border: 2px solid $primaryStrongCyan;
+        }
+        &:active {
+          outline: none;
+          border: 2px solid $primaryStrongCyan;
+        }
+      }
+      .input-wrapper {
+        position: relative;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        & > .js-validate-error-label{
+          position: absolute;
+          bottom: 45px;
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+		}
+}
+
+.amount-wrapper {
+  width: 50%;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: $veryDarkCyan;
+}
+.amount-info {
+		&__tip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+		}
+
+		&__total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+		}
+}
+.tip-amount {
+  margin-bottom: 40px;
+		&__name {
+      color: $white;
+		}
+
+		&__descr {
+      color: $grayishCyan;
+		}
+}
+
+.tip-amount-sum {
+  span {
+    font-size: 40px;
+    font-weight: 700;
+    color: $primaryStrongCyan;
+  }
+}
+.total {
+  &__name {
+    color: $white;
+  }
+
+  &__descr {
+    color: $grayishCyan;
+  }
+}
+
+.total-sum {
+  span {
+    font-size: 40px;
+    font-weight: 700;
+    color: $primaryStrongCyan;
+  }
+}
+.btn-reset {
+  display: block;
+  button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 140px;
+    border: none;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: 700px;
+    color: hsl(185, 28%, 41%);
+    background-color: hsl(183, 82%, 25%);
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      color: $veryDarkCyan;
+      background-color: $primaryStrongCyan;
+    }
+  }
+}
+
+// Media queries
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    height: auto;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 20px 0;
+  }
+  .bill-wrapper {
+    width: 100%;
+  }
+  .bill-info {
+    width: 100%;
+  }
+  .amount-wrapper {
+    width: 100%;
+  }
+  .btn-reset {
+    button {
+      margin-top: 15px;
+    }
+  } 
+}
+
+@media (max-width: 426px) {
+  .container {
+    padding: 15px;
+  }
+  .bill-form__people .input-wrapper > .js-validate-error-label {
+    font-size: 14px;
+  }
+  .tip-amount {
+    margin-bottom: 20px;
+  }
+  .btn-reset {
+    button {
+      margin-top: 15px;
+    }
+  } 
+}
+
+
+// TODO: доделать левую сторону проекта и приступить к функционалу
+
+
+
+
+
+
