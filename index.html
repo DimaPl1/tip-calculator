@@ -6,15 +6,16 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Tip calculator</title>
+  <meta name="description" content="Калькулятор чаевых - быстро и просто посчитайте размер чаевых на этой странице. Введите сумму счета и процент чаевых, и получите результат за считанные секунды.">
 </head>
 <body>
 
-  <div class="app">
+  <main class="app">
     <form>
           <div class="container">
             <div class="bill-wrapper">
               <div class="bill-info">
-                <form class="bill-form">
+                <div class="bill-form">
                   <div class="bill-form__number">
                     <label for="number">Bill</label>
                     <div class="input-wrapper">
@@ -46,7 +47,6 @@
                       </div>
                       <div class="tips__input">
                         <input type="tel" id="percent" name="percent" placeholder="Custom" autocomplete="off" maxlength="2">
-                        <!-- <div class="num">Custom</div> -->
                       </div>
                     </div>
                   </div>
@@ -56,7 +56,7 @@
                       <input type="tel" name="numberOfPeople" id="numberOfPeople" placeholder="0" autocomplete="off" data-validate-field="radio" maxlength="2">
                     </div>
                   </div>
-                </form>
+                </div>
               </div>
             </div>
             <div class="amount-wrapper">
@@ -86,7 +86,7 @@
             </div>
           </div>
     </form>
-  </div>
+  </main>
   
   <script src="./assets/libs/just-validate.min.js"></script>
   <script src="./assets/js/main.js"></script>
